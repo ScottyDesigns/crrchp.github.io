@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>CHP Officer Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #a88a32 0%, #7a5a09 100%);
+      padding: 70px 6%;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topbar-logo {
+      width: 120px;
+    }
+
+    .topbar-title h1 {
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .topbar-title p {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .discord-btn {
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(71, 66, 48, 0.85);
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .discord-btn:hover {
+      background: #d6a62f;
+      color: #1d1a12;
+    }
+
+    .dashboard-grid {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      min-height: 640px;
+      background: #474230;
+      border-radius: 22px;
+      padding: 42px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.24);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-logo {
+      width: 170px;
+      margin-bottom: 28px;
+    }
+
+    .card h2 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.45;
+      max-width: 310px;
+      opacity: 0.97;
+    }
+
+    .spacer {
+      flex: 1;
+    }
+
+    .card-button {
+      width: 100%;
+      padding: 18px;
+      border: none;
+      border-radius: 18px;
+      background: #ffffff;
+      color: #000000;
+      font-size: 34px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .card-button:hover {
+      background: #d6a62f;
+      color: #1d1a12;
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 35px;
+      font-size: 13px;
+      font-weight: 400;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 1150px) {
+
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 540px;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      body {
+        padding: 35px 18px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+      }
+
+      .topbar-left {
+        flex-direction: column;
+      }
+
+      .topbar-title h1 {
+        font-size: 30px;
+      }
+
+      .card {
+        padding: 35px 22px;
+      }
+
+      .card h2 {
+        font-size: 38px;
+      }
+
+      .card-button {
+        font-size: 28px;
+      }
+
+      .button-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="topbar-left">
+
+      <img
+        src="https://cdn.discordapp.com/attachments/1504956406258860204/1509337461913030736/0ab99424-e263-47f7-bb6c-829a754b42b6_removalai_preview.png?ex=6a18cf8d&is=6a177e0d&hm=aa2baf02badc3382a42623c525c8337a1ad63010acd324bd789089f0a8d6352a&"
+        class="topbar-logo"
+        alt="CHP Logo"
+      />
+
+      <div class="topbar-title">
+        <h1>Officer Dashboard</h1>
+        <p>California Highway Patrol Internal Portal</p>
+      </div>
+
+    </div>
+
+    <div class="button-group">
+
+      <button
+        onclick="window.location.href='index.html'"
+        class="discord-btn"
+      >
+        Back
+      </button>
+
+      <a
+        href="https://discord.gg/crrchp"
+        target="_blank"
+        class="discord-btn"
+      >
+        Join our Discord
+      </a>
+
+    </div>
+
+  </header>
+
+  <main class="dashboard-grid">
+
+    <section class="card">
+
+      <img
+        src="https://cdn.discordapp.com/attachments/1504956406258860204/1509337461044674570/96d2f828-5a89-4368-8271-040b8bcf2647_removalai_preview.png?ex=6a18cf8c&is=6a177e0c&hm=d292be2cd47c816c0b136f79a23bddf20474218bc598be38c3df336750d7969f&"
+        class="card-logo"
+        alt="CHP Logo"
+      />
+
+      <h2>Manuals</h2>
+
+      <p>
+        Access all department manuals, policies, procedures,
+        regulations, and official officer documentation.
+      </p>
+
+      <div class="spacer"></div>
+
+      <button
+        class="card-button"
+        onclick="comingSoon()"
+      >
+        Press Here
+      </button>
+
+    </section>
+
+    <section class="card">
+
+      <img
+        src="https://cdn.discordapp.com/attachments/1504956406258860204/1509337461044674570/96d2f828-5a89-4368-8271-040b8bcf2647_removalai_preview.png?ex=6a18cf8c&is=6a177e0c&hm=d292be2cd47c816c0b136f79a23bddf20474218bc598be38c3df336750d7969f&"
+        class="card-logo"
+        alt="CHP Logo"
+      />
+
+      <h2>Radio Communications</h2>
+
+      <p>
+        Access radio procedures, ten codes, penal codes,
+        and communication protocols used during patrol.
+      </p>
+
+      <div class="spacer"></div>
+
+      <button
+        class="card-button"
+        onclick="comingSoon()"
+      >
+        Press Here
+      </button>
+
+    </section>
+
+    <section class="card">
+
+      <img
+        src="https://cdn.discordapp.com/attachments/1504956406258860204/1509337461044674570/96d2f828-5a89-4368-8271-040b8bcf2647_removalai_preview.png?ex=6a18cf8c&is=6a177e0c&hm=d292be2cd47c816c0b136f79a23bddf20474218bc598be38c3df336750d7969f&"
+        class="card-logo"
+        alt="CHP Logo"
+      />
+
+      <h2>Guides</h2>
+
+      <p>
+        Access guides covering patrol operations,
+        pursuits, traffic stops, and daily officer activities.
+      </p>
+
+      <div class="spacer"></div>
+
+      <button
+        class="card-button"
+        onclick="comingSoon()"
+      >
+        Press Here
+      </button>
+
+    </section>
+
+  </main>
+
+  <div class="copyright">
+    @2026 California Reality Roleplay. All Rights Reserved.
+  </div>
+
+  <script>
+
+    function comingSoon() {
+
+      alert(
+        "This feature has yet to be added. Please wait for the next update and try again."
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
