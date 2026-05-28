@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>CHP Officer Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #a88a32 0%, #7a5a09 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      position: relative;
+    }
+
+    .login-card {
+      width: 430px;
+      min-height: 720px;
+      background: #474230;
+      border-radius: 20px;
+      padding: 55px 28px 40px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 8px;
+      background: #ffffff;
+      border-radius: 50px;
+      margin: 0 auto 55px;
+      opacity: 0.95;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      margin-bottom: 15px;
+      background: #f5f0df;
+      color: #222;
+      font-weight: 400;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 3px rgba(214, 166, 47, 0.45);
+    }
+
+    .error {
+      display: none;
+      color: #ffb4b4;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #c79b2c;
+      color: #1d1a12;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #e0b544;
+      transform: translateY(-2px);
+    }
+
+    .notice {
+      margin-top: 45px;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      text-align: left;
+    }
+
+    .notice-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #d9ad39;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .notice p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #e8e3d5;
+      font-weight: 400;
+    }
+
+    .copyright {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .discord-link {
+      position: fixed;
+      bottom: 18px;
+      right: 22px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      background: rgba(71, 66, 48, 0.75);
+      padding: 10px 14px;
+      border-radius: 10px;
+      transition: 0.2s ease;
+    }
+
+    .discord-link:hover {
+      background: #c79b2c;
+      color: #1d1a12;
+    }
+
+    @media (max-width: 500px) {
+
+      .login-card {
+        width: 90%;
+        min-height: auto;
+        padding: 40px 22px 30px;
+      }
+
+      .logo {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .copyright {
+        left: 18px;
+        transform: none;
+        font-size: 11px;
+      }
+
+      .discord-link {
+        right: 14px;
+        bottom: 14px;
+        font-size: 11px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login-card">
+
+    <img
+      src="https://cdn.discordapp.com/attachments/1504956406258860204/1509337461913030736/0ab99424-e263-47f7-bb6c-829a754b42b6_removalai_preview.png?ex=6a18cf8d&is=6a177e0d&hm=aa2baf02badc3382a42623c525c8337a1ad63010acd324bd789089f0a8d6352a&"
+      class="logo"
+      alt="CHP Logo"
+    />
+
+    <h1>Welcome, Officer</h1>
+
+    <p class="subtitle">
+      California Highway Patrol Secure Access Portal
+    </p>
+
+    <div class="divider"></div>
+
+    <form onsubmit="login(event)">
+
+      <label for="password">
+        Department Password
+      </label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+      />
+
+      <div class="error" id="error">
+        Invalid password. Access denied.
+      </div>
+
+      <button type="submit">
+        SIGN IN
+      </button>
+
+    </form>
+
+    <div class="notice">
+
+      <div class="notice-title">
+        SECURE AUTHENTICATION
+      </div>
+
+      <p>
+        This portal is restricted to authorized California Highway Patrol personnel only.
+        Unauthorized access attempts may be logged and monitored.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    @2026 California Reality Roleplay. All Rights Reserved.
+  </div>
+
+  <a
+    class="discord-link"
+    href="https://discord.gg/crrchp"
+    target="_blank"
+  >
+    Join our Discord
+  </a>
+
+  <script>
+
+    function login(event) {
+
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+
+      const error = document.getElementById("error");
+
+      if (password === "CalRCHP") {
+
+        window.location.href = "dashboard.html";
+
+      } else {
+
+        error.style.display = "block";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
